@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <h1 style="font-size:40px"><center>Welcome to Blog Application</center></h1>
+    <h3 style="font-size:30px">Top 10 Articles</h3>
+    <ul>
+        {% for article in latest_articles %}
+        <li>
+            <a href="{% url 'get_article' article.pk %}" style="font-size:20px">{{ article }}</a><br><br>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
